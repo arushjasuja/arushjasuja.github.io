@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arush Jasuja - AI/ML Engineer & Researcher at NYU. Specializing in deep learning, computer vision, and climate resilience AI systems.">
+    <meta name="author" content="Arush Jasuja">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Arush Jasuja - AI/ML Engineer & Researcher">
+    <meta property="og:description" content="Building intelligent systems for climate resilience, healthcare, and enterprise solutions">
+    <meta property="og:url" content="https://arushjasuja.github.io/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <title>Arush Jasuja - AI/ML Engineer & Researcher</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 10000;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4a5568;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 4px;
+        }
+
+        .btn:focus,
+        .contact-link:focus,
+        .nav-links a:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .mobile-menu:hover,
+        .mobile-menu:focus {
+            background-color: rgba(102, 126, 234, 0.1);
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #4a5568;
+            margin: 2px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links.mobile-active {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+        }
+
+        .nav-links.mobile-active a {
+            padding: 0.75rem 2rem;
+            border-bottom: 1px solid #edf2f7;
+            text-align: center;
+        }
+
+        .nav-links.mobile-active a:last-child {
+            border-bottom: none;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            background: none;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-resume {
+            background: #48bb78;
+            color: white;
+            border: none;
+        }
+
+        .download-resume:hover {
+            background: #38a169;
+        }
+
+        .download-resume:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-subtitle {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .achievements h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievements li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .achievements li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .tech-stack h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .impact {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .impact h4 {
+            color: #22543d;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact p {
+            color: #276749;
+            font-size: 0.9rem;
+        }
+
+        /* Experience */
+        .timeline-item {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .duration {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #667eea;
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .university {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gpa {
+            color: #48bb78;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .research-focus {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        /* Publications */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .publication-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .publication-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .publication-venue {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-description {
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h4 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Leadership */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .leadership-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #48bb78;
+        }
+
+        .leadership-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-description {
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        /* About */
+        .about {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .projects-grid,
+            .education-grid,
+            .publications-grid,
+            .skills-grid,
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons,
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .container {
+                padding: 0 10px;
+            }
+            
+            .project-body,
+            .timeline-item,
+            .education-card {
+                padding: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <nav class="container">
+            <div class="logo">Arush Jasuja</div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#education" role="menuitem">Education</a></li>
+                <li role="none"><a href="#publications" role="menuitem">Publications</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" role="button" tabindex="0" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main-content">
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>AI/ML Engineer & Researcher</h1>
+                <p>Building intelligent systems that solve real-world problems in climate resilience, healthcare, and enterprise solutions</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="https://linkedin.com/in/arushjasuja" class="btn btn-secondary" target="_blank" rel="noopener">🔗 LinkedIn</a>
+                    <a href="https://github.com/arushjasuja" class="btn btn-secondary" target="_blank" rel="noopener">💻 GitHub</a>
+                    <button class="btn btn-primary download-resume" onclick="downloadResume()">📄 Resume</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">AI-Driven Flood Resilience Planning</h3>
+                            <p class="project-subtitle">Multi-Agent System for Urban Climate Adaptation</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Developed a novel multi-agent AI system that integrates CNNs and LSTMs to predict urban flood risk by combining spatial elevation data with temporal rainfall patterns.
+                            </p>
+                            
+                            <div class="achievements">
+                                <h4>Key Achievements</h4>
+                                <ul>
+                                    <li>Achieved validation MAE of 0.0200 in flood risk prediction</li>
+                                    <li>Identified 21.4% increase in flood risk during heavy rainfall scenarios</li>
+                                    <li>Successfully mapped vulnerable areas including Battery Park and shoreline zones</li>
+                                    <li>Reduced simulation time by 30% compared to traditional methods</li>
+                                </ul>
+                            </div>
+
+                            <div class="tech-stack">
+                                <h4>Technical Stack</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">CNN</span>
+                                    <span class="tech-tag">LSTM</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">USGS Data</span>
+                                    <span class="tech-tag">NOAA APIs</span>
+                                </div>
+                            </div>
+
+                            <div class="impact">
+                                <h4>Real-World Impact</h4>
+                                <p>This system can help cities save millions in flood damage by enabling proactive infrastructure planning and emergency response.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">AI Recruiting Intelligence Platform</h3>
+                            <p class="project-subtitle">Production-Grade Communication Analytics Engine</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Architected and deployed a scalable AI platform that processes 100,000+ daily messages from Slack/Teams, transforming unstructured communications into actionable recruiting insights.
+                            </p>
+                            
+                            <div class="achievements">
+                                <h4>Key Achievements</h4>
+                                <ul>
+                                    <li>Built microservices architecture processing 100K+ daily messages</li>
+                                    <li>Reduced API costs by 60% through intelligent caching and batching</li>
+                                    <li>Achieved <100ms query response times across millions of documents</li>
+                                    <li>Reduced time-to-hire by 30% through automated insights</li>
+                                </ul>
+                            </div>
+
+                            <div class="tech-stack">
+                                <h4>Technical Stack</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Python 3.11</span>
+                                    <span class="tech-tag">FastAPI</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Redis</span>
+                                    <span class="tech-tag">ChromaDB</span>
+                                    <span class="tech-tag">OpenAI API</span>
+                                    <span class="tech-tag">Docker</span>
+                                    <span class="tech-tag">Kubernetes</span>
+                                </div>
+                            </div>
+
+                            <div class="impact">
+                                <h4>Business Impact</h4>
+                                <p>Eliminated manual data analysis for recruiting teams and enabled real-time insights through natural language queries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="timeline-item">
+                    <h3 class="job-title">Lead AI/ML Software Engineer</h3>
+                    <div class="company">Ripik Technology Pvt Ltd</div>
+                    <div class="duration">Aug 2022 - July 2024</div>
+                    <div class="achievements">
+                        <ul>
+                            <li>Architected end-to-end manufacturing AI platform reducing planning time by 85%, delivering $20M+ annual value across 3,000+ production workers</li>
+                            <li>Established MLOps infrastructure with CI/CD pipelines reducing model deployment from 14 days to 12 hours with 99.8% reliability</li>
+                            <li>Designed distributed TensorFlow platform with ONNX Runtime, achieving 20% efficiency improvement ($2M savings)</li>
+                            <li>Engineered PyTorch-based quality control system with custom YOLOv8 (99.2% precision, 98.7% recall), reducing defects by 18% ($4M impact)</li>
+                            <li>Developed reinforcement learning system (PPO) for steel optimization, reducing waste by 15% ($15M value)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Deep Learning Engineer</h3>
+                    <div class="company">Sequoia Insilico Pvt Ltd</div>
+                    <div class="duration">May 2021 - Aug 2022</div>
+                    <div class="achievements">
+                        <ul>
+                            <li>Designed microservices architecture for HIPAA-compliant ML systems, reducing inference latency by 65% across 50+ healthcare facilities</li>
+                            <li>Engineered multimodal CNN-LSTM architecture (8.6M parameters) for depression detection, achieving 85% accuracy (34% above baseline)</li>
+                            <li>Implemented COVID-19 detection with transfer learning (DenseNet-121), achieving 90% accuracy (87% sensitivity, 93% specificity)</li>
+                            <li>Built protein structure prediction pipeline with bidirectional LSTM and attention (5.2M parameters), accelerating drug discovery by 40%</li>
+                            <li>Created explainable AI dashboard using SHAP/LIME, increasing model adoption by 70%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3 class="degree">Master of Science, Computer Science</h3>
+                        <div class="university">New York University</div>
+                        <div class="duration">Sep 2024 - May 2026</div>
+                        <div class="gpa">GPA: 3.9/4.0</div>
+                        <div class="research-focus">
+                            <strong>Current Research:</strong> Advanced Visual Reasoning with Transformers, AI agent driven flood resilience planning
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <h3 class="degree">Bachelor of Technology, Computer Science Engineering</h3>
+                        <div class="university">Guru Gobind Singh Indraprastha University</div>
+                        <div class="duration">Sep 2016 - Sep 2020</div>
+                        <div class="gpa">CGPA: 8.0/10.0</div>
+                        <div class="research-focus">
+                            <strong>Focus Areas:</strong> Machine Learning, Computer Vision, Data Structures & Algorithms
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <div class="container">
+                <h2 class="section-title">Research Publications</h2>
+                
+                <div class="publications-grid">
+                    <div class="publication-card">
+                        <h4 class="publication-title">"Connecting the Dots with Deep Learning: A Graph-Based Approach of Alzheimer's Conversion Prediction"</h4>
+                        <div class="publication-venue">AAIC (2025)</div>
+                        <p class="publication-description">Leveraged graph-based deep learning techniques to predict Alzheimer's disease conversion with improved accuracy and interpretability. Achieved 95.4% F-score in MCI to Alzheimer's conversion prediction.</p>
+                    </div>
+
+                    <div class="publication-card">
+                        <h4 class="publication-title">"Layer-wise Adaptive Sine Activation Based Recurrent Network for MCI Conversion"</h4>
+                        <div class="publication-venue">AAIC (2025)</div>
+                        <p class="publication-description">Developed novel recurrent neural architecture using layer-wise adaptive sine activation functions to enhance MCI conversion prediction accuracy.</p>
+                    </div>
+
+                    <div class="publication-card">
+                        <h4 class="publication-title">"Dimension Reduction in the Sagittal Plane for Diagnosis of MCI"</h4>
+                        <div class="publication-venue">IACC, Springer (2023)</div>
+                        <p class="publication-description">Pioneered ICA/PCA fusion technique achieving 87% diagnostic accuracy (23% improvement), with 400+ accesses, 45+ citations and implemented at 3 research hospitals.</p>
+                    </div>
+
+                    <div class="publication-card">
+                        <h4 class="publication-title">"Emotion Recognition Using Facial Expressions"</h4>
+                        <div class="publication-venue">IJIRR, IGI Global (2021)</div>
+                        <p class="publication-description">Developed hybrid ML pipeline: PCA-LBP-SVM for emotion recognition achieving 92.4% accuracy on JAFFE dataset.</p>
+                    </div>
+
+                    <div class="publication-card">
+                        <h4 class="publication-title">"Feature Selection Using Diploid Genetic Algorithm"</h4>
+                        <div class="publication-venue">Annals of Data Science, Springer (2019)</div>
+                        <p class="publication-description">Created multi-objective optimization using genetic algorithm reducing feature dimensionality by 67%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>🤖 ML/DL Frameworks</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">TensorFlow 2.x</span>
+                            <span class="tech-tag">PyTorch 2.0+</span>
+                            <span class="tech-tag">YOLO (v5-v8)</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">LLaMA</span>
+                            <span class="tech-tag">HuggingFace</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>🚀 MLOps & Cloud</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">AWS SageMaker</span>
+                            <span class="tech-tag">GCP Vertex AI</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">MLflow</span>
+                            <span class="tech-tag">Ray</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>📊 Data Engineering</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Apache Spark</span>
+                            <span class="tech-tag">SQL/NoSQL</span>
+                            <span class="tech-tag">ETL Optimization</span>
+                            <span class="tech-tag">dbt</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>💻 Programming</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python (Expert)</span>
+                            <span class="tech-tag">C++ (Advanced)</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Leadership & Community</h2>
+                
+                <div class="leadership-grid">
+                    <div class="leadership-card">
+                        <h4 class="leadership-title">🏆 Community Builder</h4>
+                        <p class="leadership-description">Organized 5 AI/ML hackathons with 500+ participants; mentored 15+ junior engineers; Presented at SoCTA, AIC, IACC, AAIC conferences</p>
+                    </div>
+
+                    <div class="leadership-card">
+                        <h4 class="leadership-title">🎭 Cultural Festival Chief</h4>
+                        <p class="leadership-description">Led 120-member team, managed $50K budget (15% under-spending), increased attendance by 35%</p>
+                    </div>
+
+                    <div class="leadership-card">
+                        <h4 class="leadership-title">🤝 Rotaract Club Board</h4>
+                        <p class="leadership-description">Increased digital engagement by 70%, led initiatives impacting 500+ underprivileged children</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">Impact by Numbers</h2>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">$40M+</div>
+                        <div class="stat-label">Business Value Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Research Publications</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3.9</div>
+                        <div class="stat-label">GPA at NYU</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3000+</div>
+                        <div class="stat-label">Workers Impacted</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Hackathon Participants</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">System Reliability</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 1.2rem; margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    I'm passionate about building AI systems that create real-world impact. My expertise spans deep learning, computer vision, NLP, and MLOps, with specialized experience in healthcare AI, manufacturing optimization, and climate resilience systems.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    I'm always interested in discussing AI/ML opportunities, research collaborations, and innovative projects.
+                </p>
+                
+                <div class="contact-links">
+                    <a href="mailto:arushjasuja@gmail.com" class="contact-link">
+                        📧 arushjasuja@gmail.com
+                    </a>
+                    <a href="https://linkedin.com/in/arushjasuja" class="contact-link" target="_blank" rel="noopener">
+                        💼 LinkedIn
+                    </a>
+                    <a href="https://github.com/arushjasuja" class="contact-link" target="_blank" rel="noopener">
+                        💻 GitHub
+                    </a>
+                    <a href="tel:+16462087412" class="contact-link">
+                        📞 (646) 208-7412
+                    </a>
+                    <a href="https://orcid.org/0000-0002-5687-0318" class="contact-link" target="_blank" rel="noopener">
+                        🎓 ORCID
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Arush Jasuja. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (navLinks && mobileMenu) {
+                const isOpen = navLinks.classList.contains('mobile-active');
+                navLinks.classList.toggle('mobile-active');
+                mobileMenu.setAttribute('aria-expanded', !isOpen);
+            }
+        }
+
+        // Resume download function
+        let isDownloading = false;
+        async function downloadResume() {
+            if (isDownloading) return; // Prevent multiple simultaneous downloads
+            
+            const button = document.querySelector('.download-resume');
+            if (!button) return;
+            
+            const originalText = button.textContent;
+            isDownloading = true;
+            
+            try {
+                button.textContent = '📄 Loading...';
+                button.disabled = true;
+                
+                // Try PDF first, fallback to text
+                const response = await fetch('./resume.pdf');
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Arush_Jasuja_Resume.pdf';
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                } else {
+                    throw new Error('PDF not found');
+                }
+            } catch (error) {
+                console.log('PDF not found, providing text version');
+                // Text fallback
+                const resumeText = `ARUSH JASUJA
+New York, NY • (646)-208-7412 • arushjasuja@gmail.com
+LinkedIn: linkedin.com/in/arushjasuja • ORCID: 0000-0002-5687-0318
+
+EDUCATION
+New York University | Sep 2024 – May 2026
+Master of Science, Computer Science | GPA: 3.9/4.0
+
+PROFESSIONAL EXPERIENCE
+Lead AI/ML Software Engineer | Ripik Technology Pvt Ltd | Aug 2022 – July 2024
+• Architected end-to-end manufacturing AI platform delivering $20M+ annual value
+• Established MLOps infrastructure reducing model deployment from 14 days to 12 hours
+• Designed distributed TensorFlow platform achieving 20% efficiency improvement ($2M savings)
+
+Deep Learning Engineer | Sequoia Insilico Pvt Ltd | May 2021 – Aug 2022
+• Designed microservices architecture for HIPAA-compliant ML systems
+• Engineered multimodal CNN-LSTM architecture for depression detection (85% accuracy)
+• Implemented COVID-19 detection with transfer learning (90% accuracy)
+
+TECHNICAL SKILLS
+ML/DL: TensorFlow 2.x, PyTorch 2.0+, YOLO (v5-v8), BERT, LLaMA, HuggingFace
+MLOps: AWS SageMaker, GCP Vertex AI, Docker, Kubernetes, MLflow
+Programming: Python (Expert), C++ (Advanced), JavaScript/TypeScript`;
+                
+                const blob = new Blob([resumeText], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Arush_Jasuja_Resume.txt';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            } finally {
+                setTimeout(() => {
+                    if (button) {
+                        button.textContent = originalText;
+                        button.disabled = false;
+                    }
+                    isDownloading = false;
+                }, 500);
+            }
+        }
+
+        // Initialize after DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start' 
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu setup
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', toggleMobileMenu);
+                
+                // Keyboard support
+                mobileMenu.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleMobileMenu();
+                    }
+                });
+            }
+
+            // Close mobile menu when clicking nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileMenu = document.querySelector('.mobile-menu');
+                    if (navLinks && mobileMenu) {
+                        navLinks.classList.remove('mobile-active');
+                        mobileMenu.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const navLinks = document.querySelector('.nav-links');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                if (mobileMenu && navLinks && 
+                    !mobileMenu.contains(e.target) && 
+                    !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('mobile-active');
+                    mobileMenu.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileMenu = document.querySelector('.mobile-menu');
+                    if (navLinks && mobileMenu) {
+                        navLinks.classList.remove('mobile-active');
+                        mobileMenu.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            // Header scroll effect
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const header = document.querySelector('header');
+                        if (header) {
+                            if (window.scrollY > 100) {
+                                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                            } else {
+                                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
