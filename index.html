@@ -1013,8 +1013,8 @@
                 </p>
                 
                 <div class="contact-links">
-                    <a href="mailto:arushjasuja@gmail.com" class="contact-link">
-                        📧 arushjasuja@gmail.com
+                    <a href="mailto:aj4368@nyu.edu" class="contact-link">
+                        📧 aj4368@nyu.edu
                     </a>
                     <a href="https://linkedin.com/in/arushjasuja" class="contact-link" target="_blank" rel="noopener">
                         💼 LinkedIn
@@ -1054,7 +1054,7 @@
         // Resume download function
         let isDownloading = false;
         async function downloadResume() {
-            if (isDownloading) return; // Prevent multiple simultaneous downloads
+            if (isDownloading) return;
             
             const button = document.querySelector('.download-resume');
             if (!button) return;
@@ -1066,50 +1066,91 @@
                 button.textContent = '📄 Loading...';
                 button.disabled = true;
                 
-                // Try PDF first, fallback to text
-                const response = await fetch('./resume.pdf');
-                if (response.ok) {
-                    const blob = await response.blob();
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'Arush_Jasuja_Resume.pdf';
-                    a.style.display = 'none';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                } else {
-                    throw new Error('PDF not found');
+                // Check if PDF exists without opening it
+                try {
+                    const response = await fetch('./resume.pdf', { method: 'HEAD' });
+                    if (response.ok) {
+                        // PDF exists, download it
+                        const pdfResponse = await fetch('./resume.pdf');
+                        const blob = await pdfResponse.blob();
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'Arush_Jasuja_Resume.pdf';
+                        a.style.display = 'none';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        return;
+                    }
+                } catch (e) {
+                    // PDF doesn't exist, proceed to text fallback
                 }
-            } catch (error) {
-                console.log('PDF not found, providing text version');
-                // Text fallback
+                
+                // Text fallback - always works
+                console.log('PDF not available, providing text version');
                 const resumeText = `ARUSH JASUJA
-New York, NY • (646)-208-7412 • arushjasuja@gmail.com
+New York, NY • (646)-208-7412 • aj4368@nyu.edu
 LinkedIn: linkedin.com/in/arushjasuja • ORCID: 0000-0002-5687-0318
 
 EDUCATION
 New York University | Sep 2024 – May 2026
 Master of Science, Computer Science | GPA: 3.9/4.0
+Current Research: Advanced Visual Reasoning with Transformers, AI agent driven flood resilience planning
+
+Guru Gobind Singh Indraprastha University | Sep 2016 – Sep 2020
+Bachelor of Technology, Computer Science Engineering | CGPA: 8.0/10.0
 
 PROFESSIONAL EXPERIENCE
 Lead AI/ML Software Engineer | Ripik Technology Pvt Ltd | Aug 2022 – July 2024
-• Architected end-to-end manufacturing AI platform delivering $20M+ annual value
-• Established MLOps infrastructure reducing model deployment from 14 days to 12 hours
-• Designed distributed TensorFlow platform achieving 20% efficiency improvement ($2M savings)
+• Architected end-to-end manufacturing AI platform reducing planning time by 85%
+• Delivered $20M+ annual value across 3,000+ production workers
+• Established MLOps infrastructure reducing model deployment from 14 days to 12 hours (99.8% reliability)
+• Designed distributed TensorFlow platform achieving 20% efficiency improvement ($2M savings) with 99.6% uptime
+• Engineered PyTorch-based quality control system with custom YOLOv8 (99.2% precision, 98.7% recall)
+• Reduced defects by 18% ($4M impact)
+• Developed reinforcement learning system (PPO) for steel optimization, reducing waste by 15% ($15M value)
 
 Deep Learning Engineer | Sequoia Insilico Pvt Ltd | May 2021 – Aug 2022
 • Designed microservices architecture for HIPAA-compliant ML systems
-• Engineered multimodal CNN-LSTM architecture for depression detection (85% accuracy)
-• Implemented COVID-19 detection with transfer learning (90% accuracy)
+• Reduced inference latency by 65% across 50+ healthcare facilities
+• Engineered multimodal CNN-LSTM architecture (8.6M parameters) for depression detection (85% accuracy, 34% above baseline)
+• Implemented COVID-19 detection with transfer learning (DenseNet-121), achieving 90% accuracy (87% sensitivity, 93% specificity)
+• Built protein structure prediction pipeline with bidirectional LSTM and attention (5.2M parameters)
+• Accelerated drug discovery by 40%
+• Created explainable AI dashboard using SHAP/LIME, increasing model adoption by 70%
+
+RESEARCH PUBLICATIONS
+"Connecting the Dots with Deep Learning: A Graph-Based Approach of Alzheimer's Conversion Prediction" | AAIC (2025)
+• Achieved 95.4% F-score in MCI to Alzheimer's conversion prediction using novel autoencoder-based graph representation
+
+"Layer-wise Adaptive Sine Activation Based Recurrent Network for MCI Conversion" | AAIC (2025)
+• Developed novel RNN architecture with adaptive sine activation functions for enhanced MCI prediction
+
+"Dimension Reduction in the Sagittal Plane for Diagnosis of MCI" | IACC, Springer (2023)
+• Pioneered ICA/PCA fusion technique achieving 87% diagnostic accuracy (23% improvement)
+• 400+ accesses, 45+ citations, implemented at 3 research hospitals
+
+"Emotion Recognition Using Facial Expressions" | IJIRR, IGI Global (2021)
+• Developed hybrid ML pipeline: PCA-LBP-SVM achieving 92.4% accuracy on JAFFE dataset
+
+"Feature Selection Using Diploid Genetic Algorithm" | Annals of Data Science, Springer (2019)
+• Created multi-objective optimization using genetic algorithm reducing feature dimensionality by 67%
 
 TECHNICAL SKILLS
-ML/DL: TensorFlow 2.x, PyTorch 2.0+, YOLO (v5-v8), BERT, LLaMA, HuggingFace
-MLOps: AWS SageMaker, GCP Vertex AI, Docker, Kubernetes, MLflow
-Programming: Python (Expert), C++ (Advanced), JavaScript/TypeScript`;
+ML/DL: TensorFlow 2.x, PyTorch 2.0+, YOLO (v5-v8), SAM, BERT, LLaMA fine-tuning (LoRA/QLoRA), HuggingFace
+MLOps: AWS SageMaker, GCP Vertex AI, Docker, Kubernetes, MLflow, Weight & Biases, Ray, Kubeflow
+Data Engineering: Apache Spark, SQL/NoSQL, ETL Optimization, dbt
+Programming: Python (Expert), C++ (Advanced), JavaScript/TypeScript (Intermediate)
+
+LEADERSHIP & COMMUNITY
+Community Builder: Organized 5 AI/ML hackathons (500+ participants); mentored 15+ junior engineers
+Presented at SoCTA, AIC, IACC, AAIC conferences in Deep Learning and Medical Imaging
+Cultural Festival Chief: Led 120-member team, managed $50K budget (15% under-spending), increased attendance by 35%
+Rotaract Club Board: Increased digital engagement by 70%, led initiatives impacting 500+ underprivileged children`;
                 
-                const blob = new Blob([resumeText], { type: 'text/plain' });
+                const blob = new Blob([resumeText], { type: 'text/plain;charset=utf-8' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
@@ -1119,6 +1160,14 @@ Programming: Python (Expert), C++ (Advanced), JavaScript/TypeScript`;
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
+                
+            } catch (error) {
+                console.error('Download failed:', error);
+                // Show user-friendly message
+                button.textContent = '📄 Download Error';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
             } finally {
                 setTimeout(() => {
                     if (button) {
@@ -1126,7 +1175,7 @@ Programming: Python (Expert), C++ (Advanced), JavaScript/TypeScript`;
                         button.disabled = false;
                     }
                     isDownloading = false;
-                }, 500);
+                }, 1000);
             }
         }
 
