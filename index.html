@@ -14,42 +14,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     
-    <!-- Google Analytics 4 -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-954J287NFF"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', 'G-954J287NFF', {
-            // Privacy-friendly settings
-            anonymize_ip: true,
-            allow_google_signals: false,
-            allow_ad_personalization_signals: false
-        });
-        
-        // Custom events for portfolio tracking
-        function trackResumeDownload() {
-            gtag('event', 'resume_download', {
-                event_category: 'engagement',
-                event_label: 'portfolio_resume'
-            });
-        }
-        
-        function trackExternalLink(linkName, destination) {
-            gtag('event', 'click', {
-                event_category: 'external_link',
-                event_label: linkName,
-                value: destination
-            });
-        }
-        
-        function trackSectionView(sectionName) {
-            gtag('event', 'section_view', {
-                event_category: 'navigation',
-                event_label: sectionName
-            });
-        }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-954J287NFF');
     </script>
     
     <title>Arush Jasuja - AI/ML Engineer & Researcher</title>
