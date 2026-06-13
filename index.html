@@ -113,11 +113,12 @@
   .method .panel .body{padding:18px}
   .method p.note{padding:0 18px 18px;color:var(--muted);font-size:15px}
   .steps{counter-reset:s;padding:6px 18px 18px}
-  .steps div{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
-  .steps div:last-child{border-bottom:none}
-  .steps div::before{content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--amber);padding-top:3px}
+  .steps > div{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .steps > div:last-child{border-bottom:none}
+  .steps > div::before{content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--amber);padding-top:3px}
+  .steps > div > div{min-width:0}
   .steps b{display:block;color:var(--text)}
-  .steps span{color:var(--muted);font-size:14.5px}
+  .steps span{color:var(--muted);font-size:0.9rem}
 
   /* ============ PROJECTS ============ */
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
