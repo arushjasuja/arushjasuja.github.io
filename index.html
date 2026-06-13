@@ -38,7 +38,7 @@
   .panel .bar .d{display:flex;gap:6px}
   .panel .bar .d i{width:8px;height:8px;border-radius:50%;background:var(--line2);display:block}
   .num{font-family:var(--mono);font-weight:700;color:var(--amber)}
-  .derivation{font-family:var(--mono);font-size:12px;color:var(--faint);display:block;margin-top:3px}
+  .derivation{font-family:var(--mono);font-size:12px;color:var(--faint);display:block;margin-top:3px;overflow-wrap:anywhere}
 
   /* reveal */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
@@ -94,7 +94,7 @@
   }
 
   /* ============ EXPERIENCE ============ */
-  .role{display:grid;grid-template-columns:170px 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--line)}
+  .role{display:grid;grid-template-columns:170px minmax(0,1fr);gap:30px;padding:34px 0;border-top:1px solid var(--line)}
   .role:first-of-type{border-top:none;padding-top:8px}
   @media(max-width:680px){.role{grid-template-columns:1fr;gap:10px}}
   .when{font-family:var(--mono);font-size:0.78rem;color:var(--faint);line-height:1.8}
@@ -108,10 +108,12 @@
   .role li strong{color:var(--text)}
 
   /* ============ METHOD / ROOFLINE ============ */
-  .method{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+  .method{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:stretch}
   @media(max-width:820px){.method{grid-template-columns:1fr}}
+  .method .panel{min-width:0}
   .method .panel .body{padding:18px}
-  .method p.note{padding:0 18px 18px;color:var(--muted);font-size:15px}
+  .method .panel .body svg{display:block;width:100%;height:auto}
+  .method p.note{padding:0 18px 18px;color:var(--muted);font-size:0.9rem}
   .steps{counter-reset:s;padding:6px 18px 18px}
   .steps > div{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
   .steps > div:last-child{border-bottom:none}
@@ -121,7 +123,7 @@
   .steps span{color:var(--muted);font-size:0.9rem}
 
   /* ============ PROJECTS ============ */
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .cards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
   @media(max-width:720px){.cards{grid-template-columns:1fr}}
   .card{background:var(--bg1);border:1px solid var(--line);border-radius:10px;padding:26px;position:relative;
         transition:transform .25s ease,border-color .25s ease}
@@ -135,7 +137,7 @@
   .card .meta{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:16px;line-height:1.7}
 
   /* ============ PUBLICATIONS ============ */
-  .pub{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:20px 0;border-top:1px solid var(--line)}
+  .pub{display:grid;grid-template-columns:150px minmax(0,1fr);gap:26px;padding:20px 0;border-top:1px solid var(--line)}
   .pub:first-of-type{border-top:none}
   @media(max-width:680px){.pub{grid-template-columns:1fr;gap:4px}}
   .pub .venue{font-family:var(--mono);font-size:0.72rem;color:var(--violet);line-height:1.7}
@@ -143,7 +145,7 @@
   .pub p{color:var(--muted);font-size:0.93rem}
 
   /* ============ SKILLS ============ */
-  .skillrow{display:grid;grid-template-columns:190px 1fr;gap:22px;padding:13px 0;border-bottom:1px dashed var(--line)}
+  .skillrow{display:grid;grid-template-columns:190px minmax(0,1fr);gap:22px;padding:13px 0;border-bottom:1px dashed var(--line)}
   .skillrow:last-child{border-bottom:none}
   @media(max-width:640px){.skillrow{grid-template-columns:1fr;gap:2px}}
   .skillrow .k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;padding-top:3px}
@@ -165,7 +167,7 @@
     <a href="https://github.com/arushjasuja">github</a>
     <a href="https://www.linkedin.com/in/arushjasuja">linkedin</a>
     <a href="https://scholar.google.com/citations?user=Sc1Mkb8AAAAJ">scholar</a>
-    <a href="resume.pdf">resume.pdf</a><!-- upload Variant A export as Arush_Jasuja_Resume.pdf -->
+    <a href="Arush_Jasuja_Resume.pdf">resume.pdf</a><!-- upload Variant A export as Arush_Jasuja_Resume.pdf -->
   </nav>
 
   <!-- SIGNATURE: the career, rendered as a profiler trace -->
