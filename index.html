@@ -129,9 +129,9 @@
         transition:transform .25s ease,border-color .25s ease}
   .card:hover{transform:translateY(-4px);border-color:var(--line2)}
   .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:10px 10px 0 0}
-  .card.amber::before{background:var(--amber)} .card.violet::before{background:var(--violet)}
+  .card.amber::before{background:var(--amber)} .card.violet::before{background:var(--violet)} .card.teal::before{background:var(--teal)}
   .card .stat{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,40px);line-height:1}
-  .card.amber .stat{color:var(--amber)} .card.violet .stat{color:var(--violet)}
+  .card.amber .stat{color:var(--amber)} .card.violet .stat{color:var(--violet)} .card.teal .stat{color:var(--teal)}
   .card h3{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.3vw,19px);margin:10px 0 0}
   .card p{margin-top:12px;color:#C7D1DB;font-size:0.93rem}
   .card .meta{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:16px;line-height:1.7}
@@ -300,6 +300,12 @@
       <h3>GPU-Optimized N-Body Simulation</h3>
       <p>100K particles on an RTX 4070. Roofline before any CUDA: 1.67 FLOP/byte against a 58 ridge, memory-bound by 35×. Each change verified against the model; the residual between 4.26× measured and ~3× predicted traced to TLB fragmentation.</p>
       <p class="meta">CUDA C++ · Nsight Compute/Systems · final 60% compute / 52% memory SOL · Dec 2025</p>
+    </article>
+    <article class="card teal">
+      <div class="stat">85%</div>
+      <h3>CUDA SGEMM Kernels</h3>
+      <p>Three progressively optimized fp32 matrix-multiply kernels in CUDA C++ (naive, shared-memory tiled, register-blocked with thread tiling), each verified against cuBLAS. The register-blocked kernel reaches ~85% of cuBLAS at 2048 (3590 vs 4205 GFLOP/s), up from ~11% naive. cuBLAS pinned to pedantic fp32 (not TF32 tensor cores) and the row-major vs column-major mismatch handled, so the comparison is honest.</p>
+      <p class="meta">CUDA C++ (C++17) · cuBLAS · Nsight Compute · Tesla T4 · <a href="https://github.com/arushjasuja/silver-giggle">repo</a></p>
     </article>
     <!-- PUBLISH GATE: keep this card only after the GitHub repo is live -->
     <article class="card violet">
