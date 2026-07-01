@@ -292,7 +292,7 @@
 </section>
 
 <section id="projects" class="wrap reveal">
-  <p class="eyebrow">projects — nyu</p>
+  <p class="eyebrow">projects — 4 builds</p>
   <h2>Analysis first, then code</h2>
   <div class="cards">
     <article class="card amber">
@@ -314,6 +314,12 @@
       <p>A GPT-style decoder implemented in PyTorch and again in JAX: multi-head causal attention, RoPE, RMSNorm, KV-cache inference, a from-scratch BPE tokenizer, and a data-parallel mixed-precision training loop. Cross-framework logit equivalence proven with NumPy oracles.</p>
       <p class="meta">PyTorch · JAX · unit-tested masking + cache correctness · <a href="https://github.com/arushjasuja">repo</a> · 2025</p>
     </article>
+    <article class="card amber">
+      <div class="stat">3+1</div>
+      <h3>RapidHire · Multi-Agent Screening</h3>
+      <p>A role and a stack of resumes go in; a ranked, explainable shortlist comes out, each candidate scored per category with a rationale and an interview/hold/reject call. Four agents run in sequence, each framework behind one seam: CrewAI orchestrates, LangChain scores against a structured schema, ChromaDB retrieves the rubric, and an optional AutoGen panel debates only the close calls. The model scores and writes prose; plain Python computes the totals and picks the label, and that line is deliberate.</p>
+      <p class="meta">CrewAI · LangChain · AutoGen · ChromaDB · uv · <a href="https://github.com/arushjasuja/rapid-hire">repo</a> · 2026</p>
+    </article>
   </div>
 </section>
 
@@ -322,25 +328,34 @@
   <h2>Five peer-reviewed papers</h2>
   <div class="pub">
     <span class="venue">Alzheimer's &amp; Dementia<br>2025 · IF 11.1</span>
-    <h3>Connecting Dots with Deep Learning: Graph-Based Approach of Alzheimer's Conversion Prediction</h3>
+    <h3>Connecting the Dots with Deep Learning: A Graph-Based Approach of Alzheimer's Conversion Prediction</h3>
   </div>
   <div class="pub">
     <span class="venue">Alzheimer's &amp; Dementia<br>2025 · IF 11.1</span>
     <h3>Layer-wise Adaptive Sine Activation Based Recurrent Network for MCI Conversion</h3>
   </div>
   <div class="pub">
-    <span class="venue">+ 3 more</span>
-    <p>Peer-reviewed ML publications in medical imaging and time-series deep learning. Full list on <a href="https://scholar.google.com/citations?user=Sc1Mkb8AAAAJ">Google Scholar</a>.</p>
+    <span class="venue">IACC<br>2022 · Springer</span>
+    <h3>Dimension Reduction in the Sagittal Plane for Diagnosis of Mild Cognitive Impairment</h3>
   </div>
+  <div class="pub">
+    <span class="venue">IJIRR<br>2021 · IGI Global</span>
+    <h3>Emotion Recognition Using Facial Expressions</h3>
+  </div>
+  <div class="pub">
+    <span class="venue">Annals of Data Science<br>2020 · Springer</span>
+    <h3>Feature Selection Using Diploid Genetic Algorithm</h3>
+  </div>
+  <p class="derivation" style="margin-top:20px">Full list, citation counts, and PDFs on <a href="https://scholar.google.com/citations?user=Sc1Mkb8AAAAJ">Google Scholar</a>.</p>
 </section>
 
 <section id="skills" class="wrap reveal">
   <p class="eyebrow">toolbox</p>
   <h2>What I reach for</h2>
-  <div class="skillrow"><span class="k">languages</span><span class="v">Python · C++ (CUDA C/C++) · C · SQL · Bash</span></div>
+  <div class="skillrow"><span class="k">languages</span><span class="v">Python · C++ (CUDA C/C++) · Triton · C · SQL · Bash</span></div>
   <div class="skillrow"><span class="k">frameworks</span><span class="v">PyTorch · JAX · TensorFlow · NumPy · Pandas</span></div>
   <div class="skillrow"><span class="k">training at scale</span><span class="v">DDP · FSDP/ZeRO · NCCL · mixed precision (BF16/FP16) · gradient checkpointing · FlashAttention</span></div>
-  <div class="skillrow"><span class="k">inference</span><span class="v">TensorRT · quantization (INT8) · vLLM · serving design</span></div>
+  <div class="skillrow"><span class="k">inference</span><span class="v">TensorRT · quantization (INT8) · vLLM · SGLang · serving design</span></div>
   <div class="skillrow"><span class="k">performance</span><span class="v">Nsight Compute/Systems · roofline &amp; Speed-of-Light analysis · memory-hierarchy optimization · kernel code generation</span></div>
   <div class="skillrow"><span class="k">infrastructure</span><span class="v">Docker · Kubernetes · CI/CD · Linux · large-scale distributed systems</span></div>
 </section>
