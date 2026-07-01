@@ -17,7 +17,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   /* fluid type base: scales smoothly from small phones to large laptops */
-  html{scroll-behavior:smooth;font-size:clamp(15px, 0.55vw + 13.2px, 17.5px);-webkit-text-size-adjust:100%}
+  html{scroll-behavior:smooth;font-size:clamp(15px, 0.45vw + 13.6px, 19px);-webkit-text-size-adjust:100%}
   body{background:var(--bg0);color:var(--text);font-family:var(--body);font-size:1rem;line-height:1.7;
        overflow-x:hidden;
        background-image:linear-gradient(var(--line) 1px, transparent 1px);
@@ -25,12 +25,12 @@
   a{color:var(--teal);text-decoration:none}
   a:hover{text-decoration:underline;text-underline-offset:3px}
   a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
-  .wrap{max-width:min(960px, 100%);margin:0 auto;padding:0 clamp(18px, 4.5vw, 28px)}
+  .wrap{max-width:min(1200px, 100%);margin:0 auto;padding:0 clamp(18px, 4vw, 40px)}
   .mono{font-family:var(--mono)}
   .eyebrow{font-family:var(--mono);font-size:0.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
   .eyebrow::before{content:"▸ ";color:var(--faint)}
   h2{font-family:var(--display);font-weight:900;font-size:clamp(23px,3.4vw,34px);letter-spacing:-0.01em;margin:10px 0 8px}
-  .lede{color:var(--muted);max-width:620px;margin-bottom:36px;font-size:1.02rem}
+  .lede{color:var(--muted);max-width:720px;margin-bottom:36px;font-size:1.05rem}
   section{padding:clamp(54px, 8vw, 84px) 0}
   .panel{background:var(--bg1);border:1px solid var(--line);border-radius:10px;overflow:hidden}
   .panel .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--bg2)}
@@ -51,9 +51,9 @@
 
   /* ============ HERO ============ */
   header{padding:clamp(56px,9vw,88px) 0 clamp(44px,6vw,64px)}
-  .name{font-family:var(--display);font-weight:900;font-size:clamp(31px,7.2vw,72px);letter-spacing:-0.025em;line-height:1.04;overflow-wrap:break-word}
+  .name{font-family:var(--display);font-weight:900;font-size:clamp(31px,7vw,84px);letter-spacing:-0.025em;line-height:1.04;overflow-wrap:break-word}
   .name .accent{color:var(--amber)}
-  .thesis{margin:20px 0 0;max-width:640px;font-size:clamp(16px,2.2vw,18.5px);color:var(--muted)}
+  .thesis{margin:20px 0 0;max-width:760px;font-size:clamp(16px,2.2vw,20px);color:var(--muted)}
   .thesis strong{color:var(--text);font-weight:600}
   .links{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
   .links a{font-family:var(--mono);font-size:0.8rem;color:var(--text);border:1px solid var(--line2);border-radius:6px;padding:7px 14px;background:var(--bg1)}
@@ -133,6 +133,9 @@
   .card .stat{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,40px);line-height:1}
   .card.amber .stat{color:var(--amber)} .card.violet .stat{color:var(--violet)} .card.teal .stat{color:var(--teal)}
   .card h3{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.3vw,19px);margin:10px 0 0}
+  .card h3 a{color:inherit;text-decoration:none;transition:color .2s ease}
+  .card h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+  .card.amber h3 a:hover{color:var(--amber)} .card.teal h3 a:hover{color:var(--teal)} .card.violet h3 a:hover{color:var(--violet)}
   .card p{margin-top:12px;color:#C7D1DB;font-size:0.93rem}
   .card .meta{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:16px;line-height:1.7}
 
@@ -171,23 +174,23 @@
   </nav>
 
   <!-- SIGNATURE: the career, rendered as a profiler trace -->
-  <figure class="trace panel reveal" aria-label="Career timeline rendered as a profiler trace, 2021 to 2026">
-    <div class="bar"><span class="t">trace — arush.career · 2021 → now</span><span class="d"><i></i><i></i><i></i></span></div>
+  <figure class="trace panel reveal" aria-label="Career timeline rendered as a profiler trace, 2016 to 2026">
+    <div class="bar"><span class="t">trace — arush.career · 2016 → now</span><span class="d"><i></i><i></i><i></i></span></div>
     <div class="scroll">
     <div class="body">
       <div class="ruler" aria-hidden="true">
-        <span style="left:0%">2021</span><span style="left:18.5%">2022</span><span style="left:36.9%">2023</span>
-        <span style="left:55.4%">2024</span><span style="left:73.8%">2025</span><span style="left:92.3%">2026</span>
+        <span style="left:0%">2016</span><span style="left:18.5%">2018</span><span style="left:36.9%">2020</span>
+        <span style="left:55.4%">2022</span><span style="left:73.8%">2024</span><span style="left:92.3%">2026</span>
       </div>
 
       <div class="lane">
         <span class="label">industry</span>
         <div class="track">
-          <div class="span teal" style="left:6.2%;width:23.4%" tabindex="0">Sequoia Insilico
-            <span class="tip"><b>Software Engineer, AI/ML</b><br>Medical-diagnosis inference, 1M+ patient records.<br>INT8 quantization: <b>−45% latency</b> at a 90% clinical accuracy floor.</span>
+          <div class="span teal" style="left:49.2%;width:12.4%" tabindex="0">Sequoia
+            <span class="tip"><b>Sequoia Insilico · SWE, AI/ML</b><br>May 2021 – Aug 2022 · medical-diagnosis inference, 1M+ patient records.<br>INT8 quantization: <b>−45% latency</b> at a 90% clinical accuracy floor.</span>
           </div>
-          <div class="span amber" style="left:29.2%;width:35.4%" tabindex="0">Ripik.AI · Lead
-            <span class="tip"><b>Lead Software Engineer</b><br>GPU perf + ML infra for 8 manufacturing customers.<br>Pipeline <b>14h → 2h</b> · <b>$15M+</b> hardware spend deferred · FSDP step time <b>−27.7%</b>.</span>
+          <div class="span amber" style="left:61.6%;width:16.9%" tabindex="0">Ripik · Lead
+            <span class="tip"><b>Ripik.AI · Lead Software Engineer</b><br>Aug 2022 – Jul 2024 · GPU perf + ML infra for 8 manufacturing customers.<br>Pipeline <b>14h → 2h</b> · <b>$15M+</b> hardware spend deferred · FSDP step time <b>−27.7%</b>.</span>
           </div>
         </div>
       </div>
@@ -195,8 +198,11 @@
       <div class="lane">
         <span class="label">education</span>
         <div class="track">
-          <div class="span violet" style="left:67.7%;width:30.8%" tabindex="0">NYU · MS CS
-            <span class="tip"><b>MS Computer Science · GPA 3.9</b><br>Deep Learning (Yann LeCun) · GPUs (Mohamed Zahran).<br>N-body project: <b>6,095×</b> speedup, roofline-first.</span>
+          <div class="span violet" style="left:4.6%;width:36.9%" tabindex="0">GGSIPU · B.Tech CS
+            <span class="tip"><b>B.Tech Computer Science · GGSIPU</b><br>2016 – 2020 · 8.0 / 10 · New Delhi.</span>
+          </div>
+          <div class="span violet" style="left:80%;width:15.3%" tabindex="0">NYU · MS CS
+            <span class="tip"><b>MS Computer Science · NYU · GPA 3.9</b><br>Sep 2024 – May 2026 · Deep Learning (Yann LeCun) · GPUs (Mohamed Zahran).<br>N-body project: <b>6,095×</b> speedup, roofline-first.</span>
           </div>
         </div>
       </div>
@@ -204,10 +210,19 @@
       <div class="lane">
         <span class="label">research</span>
         <div class="track">
-          <div class="dot violet" style="left:74%" tabindex="0" aria-label="Publications, 2025">
+          <div class="dot violet" style="left:40%" tabindex="0" aria-label="Publication, 2020">
+            <span class="tip"><b>Feature Selection Using Diploid Genetic Algorithm</b><br>Annals of Data Science (Springer), 2020 · sole-authored.</span>
+          </div>
+          <div class="dot violet" style="left:50%" tabindex="0" aria-label="Publication, 2021">
+            <span class="tip"><b>Emotion Recognition Using Facial Expressions</b><br>IJIRR (IGI Global), 2021.</span>
+          </div>
+          <div class="dot violet" style="left:60%" tabindex="0" aria-label="Publication, 2022">
+            <span class="tip"><b>Dimension Reduction in the Sagittal Plane for MCI Diagnosis</b><br>IACC · Springer CCIS, 2022.</span>
+          </div>
+          <div class="dot violet" style="left:85.5%" tabindex="0" aria-label="Publications, 2025">
             <span class="tip"><b>2× Alzheimer's &amp; Dementia (IF 11.1), 2025</b><br>5 peer-reviewed ML papers total, independent research alongside full-time work.</span>
           </div>
-          <div class="dot amber" style="left:88%" tabindex="0" aria-label="N-body project, December 2025">
+          <div class="dot amber" style="left:91.6%" tabindex="0" aria-label="N-body project, December 2025">
             <span class="tip"><b>N-body · Dec 2025</b><br>192.5 s → 31.6 ms on an RTX 4070.<br>192.5 / 0.0316 ≈ <b>6,095×</b></span>
           </div>
         </div>
@@ -303,7 +318,7 @@
     </article>
     <article class="card teal">
       <div class="stat">85%</div>
-      <h3>CUDA SGEMM Kernels</h3>
+      <h3><a href="https://github.com/arushjasuja/silver-giggle">CUDA SGEMM Kernels</a></h3>
       <p>Three progressively optimized fp32 matrix-multiply kernels in CUDA C++ (naive, shared-memory tiled, register-blocked with thread tiling), each verified against cuBLAS. The register-blocked kernel reaches ~85% of cuBLAS at 2048 (3590 vs 4205 GFLOP/s), up from ~11% naive. cuBLAS pinned to pedantic fp32 (not TF32 tensor cores) and the row-major vs column-major mismatch handled, so the comparison is honest.</p>
       <p class="meta">CUDA C++ (C++17) · cuBLAS · Nsight Compute · Tesla T4 · <a href="https://github.com/arushjasuja/silver-giggle">repo</a></p>
     </article>
@@ -316,7 +331,7 @@
     </article>
     <article class="card amber">
       <div class="stat">3+1</div>
-      <h3>RapidHire · Multi-Agent Screening</h3>
+      <h3><a href="https://github.com/arushjasuja/rapid-hire">RapidHire · Multi-Agent Screening</a></h3>
       <p>A role and a stack of resumes go in; a ranked, explainable shortlist comes out, each candidate scored per category with a rationale and an interview/hold/reject call. Four agents run in sequence, each framework behind one seam: CrewAI orchestrates, LangChain scores against a structured schema, ChromaDB retrieves the rubric, and an optional AutoGen panel debates only the close calls. The model scores and writes prose; plain Python computes the totals and picks the label, and that line is deliberate.</p>
       <p class="meta">CrewAI · LangChain · AutoGen · ChromaDB · uv · <a href="https://github.com/arushjasuja/rapid-hire">repo</a> · 2026</p>
     </article>
